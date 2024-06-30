@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  vite-local:
+    container_name: vite-local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 4004:4004
