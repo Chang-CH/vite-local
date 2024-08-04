@@ -14,6 +14,6 @@ RUN pnpm run build
 
 FROM base
 COPY --from=prod-deps /app/node_modules /app/node_modules
-COPY --from=build /app/dist /app/dist
+COPY --from=build /app/dist app/dist
 EXPOSE 4004
 CMD [ "pnpm", "dlx", "serve", "-s", "dist", "-l", "4004"]
